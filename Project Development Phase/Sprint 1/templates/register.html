@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>IBM Plasma Donor App</title>
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</style>
+</head>
+<body>
+<center>
+	<h2>Plasma Donor Application</h2><br>
+  <div class="register">
+    <img src="{{ url_for('static', filename='plasma.png') }}" alt="plasma donation image"><br><br>
+		<h3>Register Page</h3>
+    <p style="color:black;font-weight: bold;" id="result">{{ msg }}</p>
+    <form action="{{ url_for('register')}}"method="post">
+    <label>Username : <input type="text" name="username" placeholder="Enter username" required="required" style="color:black" /></label><br><br>
+    <label>Email : <input type="email" name="email" placeholder="Enter email" required="required" style="color:black" /></label><br><br>
+    <label>Password : <input type="password" name="password" placeholder="Enter password" required="required" style="color:black"/></label><br><br>
+    <label>Mobile No :     <input type="text" name="phone" placeholder="Enter mobile number" required="required" style="color:black"/></label><br><br>
+    <label>City : <input type="city" name="city" placeholder="Enter City" required="required" style="color:black"/></label><br><br>
+    <label>Infection status :    
+      <select name="infect">
+        <option value="select" selected>Select COVID infection status</option>
+        <option value="infected">Infected</option>
+        <option value="uninfected">Uninfected</option>
+      </select>
+    </label><br><br>
+    <label>Blood group : 
+      <select name="blood">
+        <option value="select" selected>Choose your blood group</option>
+        <option value="O Positive">O Positive</option>
+        <option value="A Positive">A Positive</option>
+        <option value="B Positive">B Positive</option>
+        <option value="AB Positive">AB Positive</option>
+        <option value="O Negative">O Negative</option>
+        <option value="A Negative">A Negative</option>
+        <option value="B Negative">B Negative</option>
+        <option value="AB Negative">AB Negative</option>
+      </select>
+    </label><br><br>
+    <button type="submit" class="btn btn-primary btn-block btn-large">Register</button><br><br>
+    <p style="font-weight:bold">Already a user ? <a href="/login"> Login</a></p>
+   </form>
+<br><br>
+</div>
+</center>
+</body>
+</html>
