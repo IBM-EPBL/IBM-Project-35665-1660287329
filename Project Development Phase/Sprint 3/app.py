@@ -7,7 +7,9 @@ import ibm_db
 import re
 
 app = Flask(__name__)
-  
+
+app.secret_key = 'a'
+
 try:
     conn = ibm_db.connect("DATABASE=BLUDB;HOSTNAME=b1bc1829-6f45-4cd4-bef4-10cf081900bf.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud;PORT=32304;SECURITY=SSL;SSLServerCertificate=DigiCertGlobalRootCA.crt;UID=xbj61988;PWD=pWF7JgHPSHKIYFoJ", '', '')
     print("Connected to database: ", conn)
