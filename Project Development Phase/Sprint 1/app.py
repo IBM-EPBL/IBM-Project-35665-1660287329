@@ -29,7 +29,7 @@ def loginpage():
     if request.method == 'POST' :
         username = request.form['username']
         password = request.form['password']
-        sql = "SELECT * FROM donors WHERE username =? AND password=?"
+        sql = "SELECT * FROM users WHERE username =? AND password=?"
         stmt = ibm_db.prepare(conn, sql)
         ibm_db.bind_param(stmt,1,username)
         ibm_db.bind_param(stmt,2,password)
