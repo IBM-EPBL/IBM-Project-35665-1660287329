@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Plasma Donar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<style>
+	.big{
+		background-color:white;
+		margin-left:550px;
+		margin-right:550px;
+		height:100%;
+		border-radius: 25px;
+		border: 3px solid #4a77d4;
+		box-shadow: 6px 8px 4px grey;
+		text-align:center;
+		}
+		.row{
+		
+		height:150px;
+		
+		}
+		.col{
+			margin:10px;
+			margin-left:50px;	
+			margin-right:50px;
+			border-radius: 25px;
+			border: 1px solid #4a77d4;
+			text-align:center;
+            background-color: rgb(250, 187, 0);
+		}
+		.ext{
+		margin-top:25px;
+		line-height:40px;
+		}
+		.ext1{
+		margin-top:40px;
+		line-height:50px;
+		font-size:25px;
+		color:#f95450;
+		}	
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }	
+        li {
+        float: left;
+        }
+
+        li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+
+        li a:hover {
+        background-color: rgba(0, 255, 242, 0.903);
+        }
+
+        .card{
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+        .flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  border-radius: 25px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 25px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 25px;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+</style>
+<body style="background-image: url('/static/blood1.jpg');background-repeat: no-repeat;background-position: center;background-size: cover;">
+<div class="header">
+<ul>
+    <li style="color: white;text-align: center;font-weight: bolder; display: block;text-decoration: none;padding: 14px 16px;">Plasma Donor Application</li>
+		<li><a href="/requester">Request</a></li>
+		<li><a class="active" href="/logout">Logout</a></li>
+
+	</ul>
+  <br>
+  <div class="flip-card" style="margin-left: 40%;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front" style="background-color: rgb(11, 226, 250);">
+        <p style="margin-top: 10%;font-size:50px;"><br><b>Donors</b></p>
+      </div>
+      <div class="flip-card-back">
+        <p style="margin-top: 35%;"><font size="20px">{{result['1']}}</font></p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col" >
+		<div class="ext">{{result['2']}}<br><b>O Positive</b></div>
+	</div>
+    <div class="col" >
+		<div class="ext">{{result['3']}}<br><b>A Positive</b></div>
+	</div>
+    <div class="col" >
+		<div class="ext">{{result['4']}}<br><b>B Positive</b></div>
+	</div>
+    <div class="col" >
+		<div class="ext">{{result['5']}}<br><b>AB Positive</b></div>
+	</div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col" >
+		<div class="ext">{{result['6']}}<br><b>O Negative</b></div>
+	</div>
+    <div class="col" >
+		<div class="ext">{{result['7']}}<br><b>A Negative</b></div>
+	</div>
+    <div class="col" >
+		<div class="ext">{{result['8']}}<br><b>B Negative</b></div>
+	</div>
+    <div class="col" >
+		<div class="ext">{{result['9']}}<br><b>AB Negative</b></div>
+	</div>
+  </div>
+  <div style="height:200px"></div>
+</div>
+</body>
+</html>
