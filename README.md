@@ -1,5 +1,4 @@
 
 # Plasma Donor Application
-IBM-Project-35665-1660287329
 DEMO VIDEO LINK FOR PLASMA DONOR APPLICATION
-https://youtu.be/MMPdXjWE1i8
+# https://youtu.be/MMPdXjWE1i8
